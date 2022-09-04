@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	fmt.Println(Somar(10, 10))
 }
