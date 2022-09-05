@@ -35,6 +35,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: lcdsilva/fullcycle--integracao-continua:latest
+          tags: lcdsilva/fullcycle-integracao-continua:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
