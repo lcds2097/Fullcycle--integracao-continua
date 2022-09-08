@@ -15,7 +15,12 @@ jobs:
         with:
           go-version: 1.13
       - run: go test -coverprofile=coverage.out
-      - run: go run math.go
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
@@ -33,5 +38,5 @@ jobs:
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          push: true
+          push: false
           tags: lcdsilva/fullcycle-integracao-continua:latest
